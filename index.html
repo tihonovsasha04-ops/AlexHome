@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Alexander Tikhonov</title>
 </head>
+<style>
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover {
+        color: red;
+    }
+
+    h1, h2 {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    p {
+        letter-spacing: 1.2px;
+    }
+
+    li {
+        font-size: 24px;
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: #ff3b3b;
+        text-shadow: 0 0 8px rgba(255, 59, 59, 0.3), 0 0 16px rgba(255, 59, 59, 0.5);
+    }
+</style>
+
 <body>
     <header class="header">
         <nav class="header__nav">
@@ -13,24 +45,31 @@
         </nav>
     </header>
 
-    <main class="main">
+    <main class="main" style="text-align: center; padding-top: 100px;">
         <section class="about">
             <h1 class="about__title">About me</h1>
-            <img src="photo/profile.jpg" alt="profile-photo" class="about__img">
-            <p class="about__info">
-                Hello! My name is <b>Alexander Tikhonov</b>. I am 22 years old.
-                 I am currently studying <b>Manual QA</b> and developing my skills in software testing and the IT field. <br>
-                 I am deeply interested in Manual QA and information technologies.
-                  Right now I am learning test design techniques, writing test cases,
-                   and working with tools such as <b>Jira</b>, <b>TestCaseLab</b> and <b>GitHub</b>. <br>
-                   Outside of testing I am a huge <b>Spider-Man</b> fan, a true cinephile and an avid gamer.
+            <div class="about__text">
+                <p class="about__info" style="width: 600px; font-size: 24px;">
+                    Hello! My name is <span class="highlight">Alexander Tikhonov</span>. I am 22 years old.
+                    I am currently studying <span class="highlight">Manual QA</span> and developing my skills in
+                    software testing and the IT field. <br>
+                    I am deeply interested in Manual QA and information technologies.
+                    Right now I am learning test design techniques, writing test cases,
+                    and working with tools such as <span class="highlight">Jira</span>, <span
+                        class="highlight">TestCaseLab</span> and <span class="highlight">GitHub</span>. <br>
+                    Outside of testing I am a huge <span class="highlight">Spider-Man</span> fan, a true cinephile and
+                    an avid gamer.
                     I love diving into movies, comic-book universes and video games in my free time.
-            </p>
+                </p>
+                <div class="about__img-wrap">
+                    <img src="photo/profile.jpg" alt="profile-photo" class="about__img">
+                </div>
+            </div>
         </section>
 
         <section class="skill">
             <h2 class="skill__title">My skills</h2>
-            <ul class="skill__list">
+            <ul class="skill__list" style="margin-bottom: 100px;">
                 <li><i>Manual Software Testing</i></li>
                 <li><i>Test Cases</i></li>
                 <li><i>Bug Reports</i></li>
@@ -41,10 +80,13 @@
             </ul>
         </section>
 
-        <section class="goal">
+        <section class="goal" style="margin-bottom: 50px;">
             <h2 class="goal__title">My goals</h2>
-            <p class="goal__info">My goal is to become a <b>Manual QA Engineer</b>, hone my testing skills,
-                 and eventually transition into <b>Automation QA</b> or another related field.</p>
+            <p class="goal__info" style="font-size: 24px;">My goal is to become a <span class="highlight">Manual QA
+                    Engineer</span>, hone my
+                testing skills, and eventually transition into <span class="highlight">Automation QA</span> or another
+                related field.
+            </p>
         </section>
     </main>
 </body>
