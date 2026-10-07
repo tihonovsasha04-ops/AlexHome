@@ -1,0 +1,64 @@
+CREATE TABLE car_brands (
+	id int PRIMARY KEY AUTO_INCREMENT,
+    title varchar(100)
+);
+
+INSERT INTO car_brands
+(title)
+VALUES
+('Dodge'), ('Chevrolet'), ('Toyota'), ('BMW'), ('Mercedes');
+
+-------------------------------------------------------------------------------------------------
+CREATE TABLE car_models (
+	id int PRIMARY KEY AUTO_INCREMENT,
+    carBrandId int,
+    title varchar(100),
+    
+    FOREIGN KEY (carBrandId) REFERENCES car_brands(id)
+);
+
+INSERT INTO car_models
+(carBrandId, title)
+VALUES
+(1, 'Charger'), (2, 'Camaro'), (3, 'Yaris'), (4, 'X5'), (5, 'Vito');
+
+-------------------------------------------------------------------------------------------------
+CREATE TABLE users (
+	id int PRIMARY KEY AUTO_INCREMENT,
+    firstName varchar(100) NOT NULL,
+    lastName varchar(100) NOT NULL,
+    email varchar(100) NOT NULL UNIQUE,
+    password varchar(100) NOT NULL
+);
+
+INSERT INTO users
+(firstName, lastName, email, password)
+VALUES
+('Alexander', 'Tikhonov', 'test@gmail.com', 'alex123'),
+('Piter', 'Parker', 'parker@gmail.com', 'pit123'),
+('Eddie', 'Brock', 'brock@gmail.com', 'eddie123'),
+('Wade', 'Wilson', 'wilson@gmail.com', 'wade123'),
+('Ben', 'Raily', 'raily@gmail.com', 'ben123');
+
+-------------------------------------------------------------------------------------------------
+CREATE TABLE cars (
+	id int PRIMARY KEY AUTO_INCREMENT,
+    userId int,
+    carBrandId int,
+    carModelId int,
+    mileage int,
+    initialMilleage int,
+    
+    FOREIGN KEY (userId) REFERENCES users(id),
+    FOREIGN KEY (carBrandId) REFERENCES car_brands(id),
+    FOREIGN KEY (carModelId) REFERENCES car_models(id)
+);
+
+INSERT INTO cars
+(userId, carBrandId, carModelId, mileage, initialMilleage)
+VALUES
+(1, 1, 1, 50, 10),
+(2, 2, 2, 100, 50),
+(3, 3, 3, 150, 100),
+(4, 4, 4, 500, 150),
+(5, 5, 5, 5000, 1000);
